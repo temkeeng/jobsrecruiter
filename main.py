@@ -16,11 +16,13 @@ from slugify import slugify
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
 
+# Change info here
+QUERY = 'Backend Engineer'
+LOCATION = 'United States'
+
 scraped_data = []
 bot = telebot.TeleBot(os.getenv("TELEGRAM_BOT_TOKEN"))
-QUERY = os.getenv('QUERY')
 CHAT_ID = os.getenv("TELEGRAM_CHANNEL_ID")
-LOCATION = os.getenv('LOCATION')
 
 
 def on_data(data: EventData):
