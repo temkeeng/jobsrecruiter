@@ -16,7 +16,6 @@ from slugify import slugify
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
 
-# List to store the scraped data
 scraped_data = []
 bot = telebot.TeleBot(os.getenv("TELEGRAM_BOT_TOKEN"))
 QUERY = os.getenv('QUERY')
@@ -26,7 +25,6 @@ LOCATION = os.getenv('LOCATION')
 
 def on_data(data: EventData):
     print('[ON_DATA]', data.title, data.company, data.description, data.date, data.link)
-    # Append the data to the list
     scraped_data.append({
         'title': data.title,
         'company': data.company,
@@ -50,7 +48,6 @@ def on_error(error):
 
 def on_end():
     print('[ON_END]')
-    # Save the data to a CSV file
     df = pd.DataFrame(scraped_data)
     if os.path.isfile('linkedin_jobs.csv'):
         df.to_csv(
