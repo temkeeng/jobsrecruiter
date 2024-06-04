@@ -6,8 +6,10 @@ linkedin_jobs.csv
 perplexity_api.py
 scrape.py
 .DS_Store
-/idea
 .idea
 .venv
 __pycache__
 .idea/
+__pycache__/
+
+
