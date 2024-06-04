@@ -36,9 +36,10 @@ def on_data(data: EventData):
 
 def on_metrics(metrics: EventMetrics):
     print('[ON_METRICS]', str(metrics))
+    hashtag = f'#{slugify(QUERY, separator="_")}'
     bot.send_message(
         chat_id=CHAT_ID,
-        text=f'🔍 #{slugify(QUERY, separator='_')}\nДоступно: {metrics.processed} вакансий',
+        text=f'🔍 #{hashtag}\nДоступно: {metrics.processed} вакансий',
     )
 
 
