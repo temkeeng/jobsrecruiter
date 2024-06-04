@@ -1,0 +1,9 @@
+name: Job Recruiter Bot
+on:
+  push:
+jobs:
+  Daily-Run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
