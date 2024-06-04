@@ -1,0 +1,13 @@
+.env
+app.log
+details.txt
+jobs.csv
+linkedin_jobs.csv
+perplexity_api.py
+scrape.py
+.DS_Store
+/idea
+.idea
+.venv
+__pycache__
+.idea/
