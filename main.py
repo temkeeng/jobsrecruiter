@@ -106,7 +106,7 @@ def send_jobs():
         try:
             bot.send_message(
                 chat_id=CHAT_ID,
-                text=f'*{job['title']}*\n```{job_description}```\n',
+                text=f'*{job["title"]}*\n```{job_description}```\n',
                 parse_mode="Markdown"
             )
         except telebot.apihelper.ApiTelegramException:
@@ -114,9 +114,9 @@ def send_jobs():
             page = 1
             for text in splitted_text:
                 if page > 1:
-                    job_title = f'*{job['title']}*\nPage *{page}* 👇'
+                    job_title = f'*{job["title"]}*\nPage *{page}* 👇'
                 else:
-                    job_title = f'*{job['title']}*'
+                    job_title = f'*{job["title"]}*'
                 bot.send_message(
                     chat_id=CHAT_ID,
                     text=job_title,
