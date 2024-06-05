@@ -1,6 +1,14 @@
 name: Job Recruiter Bot
+
 on:
   push:
+  workflow_dispatch:
+
+env:
+  LI_AT_COOKIE: ${{ secrets.LI_AT_COOKIE }}
+  PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
 jobs:
   Daily-Run:
     runs-on: ubuntu-latest
@@ -10,11 +18,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Set secrets
-        env:
-          LI_AT_COOKIE: ${{ secrets.LI_AT_COOKIE }}
-          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+
         run: echo "Secrets are ready"
       - name: Run app
         env:
